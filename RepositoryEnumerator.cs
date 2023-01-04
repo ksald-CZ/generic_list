@@ -9,7 +9,7 @@ namespace generic_list
 {
     internal class RepositoryEnumerator<T> : IEnumerator<T>
     {
-        private int currentIndex = -1;
+        private int currentIndex = -1; // začínáme na idexu -1 prtože je to pak jednodušší inkermentovat
 
         public RepositoryEnumerator(List<T> items) { Items = items; }
 
@@ -26,12 +26,12 @@ namespace generic_list
 
         public bool MoveNext()
         {
-            currentIndex++;
+            currentIndex++; // přičte 1 k aktuálnímu indexu
             return currentIndex < Items.Count;
         }
         public void Reset()
         {
-            currentIndex = -1;
+            currentIndex = -1; //vrací na začatek indexu
         }
     }
 }
